@@ -36,6 +36,26 @@ function woocommerce_gateway_magpie_init() {
 		public function process_payment( $order_id ) {
 			include(dirname(__FILE__) . "/includes/woocommerce-magpie-process-payment.php");
 		}
+		// Apply icon on credit card forms
+		public function get_icon() {
+			$icons = apply_filters(
+				'wc_stripe_magpie_icons',
+				array(
+					'magpie'       => '<img src="' . WC_MAGPIE_PLUGIN_URL . '/assets/images/magpie-logo.svg" class="magpie-logo-icon magpie-icon"  style="height: 22px; width: 40px; border-radius: 5% 5%; background: #4e505f; padding: 5px; border: 9px;" alt="Magpie" />',
+					'visa'       => '<img width="35px" src="' . WC_MAGPIE_PLUGIN_URL . '/assets/images/visa.svg" class="magpie-visa-icon magpie-icon"  alt="Visa" />',
+					'mastercard' => '<img width="35px" src="' . WC_MAGPIE_PLUGIN_URL . '/assets/images/mastercard.svg" class="magpie-mastercard-icon magpie-icon" alt="Mastercard" />',
+				)
+			);;
+
+			$icons_str = '';
+
+
+			$icons_str .= isset( $icons['magpie'] ) ? $icons['magpie'] : '';
+			$icons_str .= isset( $icons['visa'] ) ? $icons['visa'] : '';
+			$icons_str .= isset( $icons['mastercard'] ) ? $icons['mastercard'] : '';
+
+			return apply_filters( 'woocommerce_gateway_icon', $icons_str, $this->id );
+		}
 		
 
 	}
