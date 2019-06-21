@@ -33,6 +33,9 @@ function woocommerce_gateway_magpie_init() {
 			include(dirname(__FILE__) . "/includes/woocommerce-magpie-settings.php");
 		}
 
+		public function process_payment( $order_id ) {
+			include(dirname(__FILE__) . "/includes/woocommerce-magpie-process-payment.php");
+		}
 		
 
 	}
