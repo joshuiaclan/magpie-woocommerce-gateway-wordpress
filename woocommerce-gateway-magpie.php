@@ -19,6 +19,8 @@ function woocommerce_gateway_magpie_init() {
 	
 	if ( ! class_exists( 'WC_Payment_Gateway' ) ) return ;
 
+	define( 'WC_MAGPIE_PLUGIN_URL', untrailingslashit( plugins_url( basename( plugin_dir_path( __FILE__ ) ), basename( __FILE__ ) ) ) );
+
 
 	class WC_Magpie_Gateway extends WC_Payment_Gateway {
 		
