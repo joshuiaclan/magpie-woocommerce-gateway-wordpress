@@ -2,7 +2,7 @@
 /**
  * Plugin Name: WooCommerce Magpie Gateway
  * Plugin URI: https://wordpress.org/plugins/woocommerce-gateway-stripe/
- * Description: Charge any card with a Visa or MasterCard logo, whether credit, debit, or prepaid. Soon: Accept bitcoins and other digital currencies and get paid in local money!
+ * Description: Magpie's apps and tools allow you to collect customer payments easily on their mobile phones. Your web or native apps on iOS and Android just work.
  * Author: Joshua Reden M. Aclan
  * Version: 1.0.0
  * Text Domain: woocommerce-gateway-magpie
